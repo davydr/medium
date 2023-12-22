@@ -19,7 +19,7 @@ for bucket in $(aws s3 ls | awk '{print $3}'); do
     # Check if the bucket name matches any of the exclusion patterns
     if [[ $bucket != *"cloudtrail"* && $bucket != *"logs"* && $bucket != *"backup"* ]]; then
         echo "Searching in bucket: $bucket"
-        aws s3 ls "s3://$bucket/" --recursive | grep "$SEARCH_STRING"
+        aws s3 ls "s3://$bucket/" --recursive --human-readable | grep "$SEARCH_STRING"
     else
         echo "Skipping excluded bucket: $bucket"
     fi
