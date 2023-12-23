@@ -17,8 +17,8 @@
    Windows:  
    ```
    aws s3 ls s3://myBucket --recursive | ForEach-Object { if ($_ -match '^\S+\s+\S+\s+\S+\s+(.+)$') { $matches[1] } }
-```
-```
+   ```
+   ```
    aws s3 ls s3://myBucket --recursive | Select-String 'foo.txt'
    ```
 
