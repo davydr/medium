@@ -5,9 +5,11 @@
    1.3) aws_search.py is for python (run it like 'python aws_search.py filename.txt')  
 
 2) perform an aws s3 ls command and only give the file names or look for one file
-   Linux and Mac  
+   Linux and Mac
+     
    ```aws s3 ls s3://myBucket --recursive | awk 'NF>1{print $4}' | grep .  
-   ```aws s3 ls s3://myBucket --recursive | grep 'foo.txt'  
+   ```aws s3 ls s3://myBucket --recursive | grep 'foo.txt'
+     
    Windows:  
    ```aws s3 ls s3://myBucket --recursive | ForEach-Object { if ($_ -match '^\S+\s+\S+\s+\S+\s+(.+)$') { $matches[1] } }
    ```aws s3 ls s3://myBucket --recursive | Select-String 'foo.txt'  
