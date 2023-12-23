@@ -1,3 +1,6 @@
+![GitHub stars](https://img.shields.io/github/stars/davydr/medium?style=social)
+
+
 In order to use most aws command line tools you need  
 1) Establish an account that has access keys
 2) Use these access keys to perform actions with the cli
