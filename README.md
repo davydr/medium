@@ -16,7 +16,7 @@ You can follow these ssteps to add your keys to your computer:
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html  
 
 After loading the aws tool on your computer these are an example of configuring your keys on your computer  
->> aws configure  
+% aws configure  
 
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE  
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY  
