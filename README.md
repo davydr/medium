@@ -2,7 +2,7 @@ In order to use most aws command line tools you need
 1) Establish an account that has access keys
 2) Use these access keys to perform actions with the cli
 
-You can make the account using IAM on the aws console (console.aws.com) and give the account limited or all access on your account  
+You can make the account using IAM on the aws console (https://console.aws.amazon.com) and give the account limited or all access on your account  
 These access keys are like a username and password combination  
 AWS_ACCESS_KEY_ID == username    
 AWS_SECRET_ACCESS_KEY == password  
