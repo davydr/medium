@@ -8,13 +8,17 @@
    Linux and Mac
      
    ```
-   aws s3 ls s3://myBucket --recursive | awk 'NF>1{print $4}' | grep .  
+   aws s3 ls s3://myBucket --recursive | awk 'NF>1{print $4}' | grep .
+   ```
+   ```
    aws s3 ls s3://myBucket --recursive | grep 'foo.txt'
    ```
      
    Windows:  
    ```
    aws s3 ls s3://myBucket --recursive | ForEach-Object { if ($_ -match '^\S+\s+\S+\s+\S+\s+(.+)$') { $matches[1] } }
+```
+```
    aws s3 ls s3://myBucket --recursive | Select-String 'foo.txt'
    ```
 
