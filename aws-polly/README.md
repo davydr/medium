@@ -1,4 +1,4 @@
-Change lines 9, 10 and 11 for your S3 files  
+Change lines 9, 10 and 11 for your S3 files. Set the folder path to "" if your files are directly in your bucket   
 
 If you want a list of AWS Polly voices use a command like this:  
 ```aws polly describe-voices --language-code en-US```  
