@@ -1,0 +1,33 @@
+function cdadd() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: cdadd <bookmark_name>"
+        return
+    fi
+    local bookmark_name=$1
+    local current_index=$(awk '{print $1}' ~/.dir_bookmarks | sort -n | tail -n 1)
+    local new_index=$((current_index + 1))
+    echo "${new_index} ${bookmark_name} $(pwd)" >> ~/.dir_bookmarks
+}
+
+function cdgo() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: cdgo <index>"
+        return
+    fi
+    local dir_index=$1
+    local DIR=$(awk -v idx="$dir_index" '$1 == idx {print $3}' ~/.dir_bookmarks)
+    if [[ -d "$DIR" ]]; then
+        cd "$DIR" || return
+    else
+        echo "No such bookmark"
+    fi
+}
+
+function cdlist() {
+    if [ -s ~/.dir_bookmarks ]; then
+        echo "Your directory bookmarks:"
+        cat ~/.dir_bookmarks
+    else
+        echo "No bookmarks set."
+    fi
+}
