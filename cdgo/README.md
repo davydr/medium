@@ -12,9 +12,10 @@ This set of shell functions provides a simple yet effective way to bookmark dire
 
 ### Installation
 
-1. Open your shell configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh).
-2. Copy and paste the functions for `cdadd`, `cdgo`, and `cdlist` into the file.
-3. Save the file and reload your shell configuration:
+1. Open your shell configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh). For my Mac it is Zsh.
+2. Copy and paste the functions for `cdadd`, `cdgo`, and `cdlist` into the file. One method --- "cat navigate_linux.txt >> ~/.zshrc"
+3. Create a directory file -- "touch ~/.dir_bookmarks"
+4. Save the file and reload your shell configuration:
 
     ```sh
     source ~/.bashrc  # or source ~/.zshrc
