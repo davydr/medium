@@ -1,6 +1,6 @@
-# Kubernetes Deployment Script
+# Thunderdome Battle Setup
 
-This Python script automates the deployment and management of containerized applications within a Kubernetes cluster. It utilizes API calls to manage deployments, configure namespaces, and ensure proper resource allocation based on an Excel spreadsheet that details the deployment specifications.
+This Python script automates the definition of tasks within a battle for scoring. This makes it easy to use the battle to aggregate scores across a sprint.
 
 ## Prerequisites
 
