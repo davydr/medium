@@ -3,7 +3,7 @@ import requests
 import sys
 import os
 
-def main(file_path):
+def main(file_path, base_url, reference_prefix):
     # Load the Excel file
     data = pd.read_excel(file_path)
     print("Processing...")
@@ -18,7 +18,7 @@ def main(file_path):
     for index, row in data.iterrows():
         battle_id = row['battleId']
         ticket_number = row['Ticket Number']
-        ae_ticket = row['AE Ticket Number']
+        ticket_reference = row['Ticket Reference Number']  # Updated column name
         sprint = row['Sprint']
         description = row['Description']
         entry_type = row['Type']
@@ -35,8 +35,8 @@ def main(file_path):
         payload = {
             "acceptanceCriteria": acceptance_criteria,
             "description": description,
-            "link": f"https://www.trmc.osd.mil/helpdesk/browse/ADVANAEDGE-{ae_ticket}",
-            "planName": f"AE-{ae_ticket}",
+            "link": f"{base_url}/helpdesk/browse/{reference_prefix}-{ticket_reference}",
+            "planName": f"{reference_prefix}-{ticket_reference}",
             "referenceId": f"{sprint} {ticket_number}",
             "type": entry_type
         }
@@ -49,8 +49,10 @@ def main(file_path):
             print(f"Failed to create entry for ticket {ticket_number}")
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: python add_tasks.py path_to_excel_file.xlsx")
+    if len(sys.argv) < 4:
+        print("Usage: python add_tasks.py path_to_excel_file.xlsx base_url reference_prefix")
         sys.exit(1)
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
+
+# usage --- python add_tasks.py path_to_excel_file.xlsx https://www.example.com GENERICPREFIX
 
