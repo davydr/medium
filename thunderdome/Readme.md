@@ -40,7 +40,8 @@ pip install pandas requests
 To run the script, use the following command in your terminal:
 
 ```bash
-python add_tasks.py path_to_excel_file.xlsx
+python add_tasks.py path_to_excel_file.xlsx https://www.example.com GENERICPREFIX
+
 ```
 
 Replace `path_to_excel_file.xlsx` with the path to your Excel file containing the deployment data.
